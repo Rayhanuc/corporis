@@ -44,7 +44,7 @@ if ( ! function_exists( 'corporis_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'corporis' ),
+			'main' => esc_html__( 'Corporis Primary Menu', 'corporis' ),
 		) );
 
 		/*
@@ -150,6 +150,8 @@ define('CORPORIS_VERSION','1.0.0');
 
 require CORPORIS_INCLUDES_DIR.'style.php';
 require CORPORIS_INCLUDES_DIR.'script.php';
+require CORPORIS_INCLUDES_DIR.'menu.php';
+require CORPORIS_INCLUDES_DIR.'custom-menu.php';
 
 
 
