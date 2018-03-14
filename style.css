@@ -851,3 +851,12 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+
+.kc-icon-wrapper i {
+    font-size: 49px;
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 30px;
+}
