@@ -19,7 +19,7 @@
                     <div class="logo u-MarginBottom25">
                         <h3 class="u-Weight700 u-MarginTop0">
                             <!--<img src="assets/imgs/logo-light.png" alt="">-->
-                            Corporis
+                            <?php echo cs_get_option('footer-title');?><!-- codestar framework option -->
                         </h3>
                     </div>
                     <p>Corporis is  fully responsible, performance oriented and SEO optimized, retina ready HTML template.</p>

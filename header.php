@@ -43,7 +43,7 @@
                     <a class="navbar-brand" href="./index.html">
                         <h3 class="u-Weight700 u-MarginTop10 u-MarginBottom0 u-sm-MarginTop0">
                             <!--<img src="assets/imgs/logo.png" class="logo logo-scrolled" alt="">-->
-                            Corporis
+                            <?php echo cs_get_option('title');?><!-- codestar framework option -->
                         </h3>
                     </a>
                 </div>

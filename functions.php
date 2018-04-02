@@ -154,7 +154,13 @@ require CORPORIS_INCLUDES_DIR.'menu.php';
 require CORPORIS_INCLUDES_DIR.'custom-menu.php';
 
 
-
+/**
+ *
+ * Codestar Framework 
+ *
+ */
+require_once get_template_directory() .'/theme-option-cs/cs-framework.php';
+require_once get_template_directory() .'/theme-option-cs/theme-option.php';
 
 
 
