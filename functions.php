@@ -100,6 +100,7 @@ add_action( 'after_setup_theme', 'corporis_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
+
 function corporis_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'corporis' ),
@@ -112,6 +113,9 @@ function corporis_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'corporis_widgets_init' );
+
+
+
 
 /**
  * Enqueue scripts and styles.
@@ -152,6 +156,9 @@ require CORPORIS_INCLUDES_DIR.'style.php';
 require CORPORIS_INCLUDES_DIR.'script.php';
 require CORPORIS_INCLUDES_DIR.'menu.php';
 require CORPORIS_INCLUDES_DIR.'custom-menu.php';
+require CORPORIS_INCLUDES_DIR.'class.sidebars.php';
+require CORPORIS_INCLUDES_DIR.'metabox.php';
+require CORPORIS_INCLUDES_DIR.'helper.php';
 
 
 /**

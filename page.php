@@ -12,7 +12,9 @@
  * @package Corporis
  */
 
-get_header(); ?>
+get_header();
+page_title_section();
+ ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">

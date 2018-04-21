@@ -33,7 +33,7 @@
     <!--header start-->
     <header>
         <!-- Start Navigation -->
-        <nav id="mainNav" class="navbar navbar-default navbar-fixed white bootsnav">
+        <nav id="mainNav" style="background: <?php echo cs_get_option('header-bg-color');?>; color: <?php echo cs_get_option('header-bg-color');?>" class="navbar navbar-default navbar-fixed white bootsnav">
             <div class="container">
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
@@ -41,10 +41,27 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand" href="./index.html">
-                        <h3 class="u-Weight700 u-MarginTop10 u-MarginBottom0 u-sm-MarginTop0">
+                        <?php
+
+                            $title = cs_get_option('title');
+                            $title_color = cs_get_option('title-color');
+
+                            
+                            
+                        ?>
+                        <h3 class="u-Weight700 u-MarginTop10 u-MarginBottom0 u-sm-MarginTop0" style="color:<?php echo $title_color; ?>">
                             <!--<img src="assets/imgs/logo.png" class="logo logo-scrolled" alt="">-->
-                            <?php echo cs_get_option('title');?><!-- codestar framework option -->
+                            <?php
+
+                                                
+
+                            //$attachment = wp_get_attachment_image_src( $logo, 'full');
+
+                           echo $title;
+                            //var_dump($attachment);
+                            ?><!-- codestar framework option -->
                         </h3>
+                        <img src="<?php echo $attachment[0];?>" alt="">
                     </a>
                 </div>
                 <!-- End Header Navigation -->

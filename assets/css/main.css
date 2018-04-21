@@ -8227,3 +8227,14 @@ div[class*='col-'].media-left
         min-width: 100px;
     }
 }
+
+
+
+/* extra css written by me rayhan uddin chowdhury */
+.kc_text_block .u-MarginTop50 ul {
+    margin-left: 0;
+}
+
+.textwidget ul {
+    margin-left: 0;
+}
