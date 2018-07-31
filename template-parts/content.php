@@ -8,52 +8,30 @@
  */
 
 ?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php
-				corporis_posted_on();
-				corporis_posted_by();
-			?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
-
-	<?php corporis_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'corporis' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			) );
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'corporis' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php corporis_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+<!-- Content area start -->
+<div class="blog-post">
+    <div class="b-title">
+        <span class="default-color">
+        	<a  href="<?php the_permalink()?>"><?php the_tags('');?></a>
+        </span>
+        <h1 class="u-MarginTop10 u-MarginBottom10">
+        	<a href="<?php the_permalink();?>"><?php the_title();?></a>
+        </h1>
+        <p class="u-MarginBottom30">By <a href="<?php the_author_link();?>"><?php the_author();?></a>   |   <a href="#"><?php the_time('d M Y');?></a></p>
+    </div>
+    <div class="b-thumb u-MarginBottom30">
+        <?php the_post_thumbnail();?>
+    </div>
+    <div class="b-txt">
+        <p class="u-LineHeight2"><?php echo wp_trim_words( get_the_content(), 45, false );?></p>
+        <p class="u-MarginTop35 u-MarginBottom0">
+            <span class="default-color">
+            	<a class="btn-go default-color" href="<?php the_permalink();?>" role="button">Continue Reading <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            </span>
+        </p>
+    </div>
+</div>
+<!-- Content area end -->
+<div class="u-MarginTop100 u-xs-MarginTop30 u-MarginBottom100 u-xs-MarginBottom30">
+    <hr>
+</div>

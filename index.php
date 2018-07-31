@@ -12,10 +12,68 @@
  * @package Corporis
  */
 
+/*
+variable sore for codestar framwork apply start 
+breadcrumb content
+*/
+
+$breadcrumb_title = cs_get_option('breadcrumb_title');
+$breadcrumb_title_home = cs_get_option('breadcrumb_title_home');
+$breadcrumb_img = cs_get_option('breadcrumb_img');
+$breadcrumb_img_array = wp_get_attachment_image_src( cs_get_option('breadcrumb_img'), 'large' );
+if(!empty($breadcrumb_img)) {
+	$breadcrumb_img = $breadcrumb_img_array[0];
+} else {
+ 	$breadcrumb_img = ''.get_template_directory_uri().'/assets/imgs/bn-1.jpg';
+ }
+
+
+
+/*
+variable sore for codestar framwork apply start
+*/
+
+
+
+
+
+
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+
+	<!-- breadcrumb area markup start -->
+	<section class="ImageBackground ImageBackground--overlay v-align-parent u-height450 js-Parallax" data-overlay="6" style="margin-top: 80px;">
+        <div class="ImageBackground__holder" style="background-image: url(&quot;assets/imgs/bn-1.jpg&quot;); background-position: 50% 32px;">
+			
+
+            <img src="<?php echo $breadcrumb_img ;?>" alt="...">
+        </div>
+        <div class="v-align-child">
+            <div class="container ">
+                <div class="row ">
+                    <div class="col-md-8 col-xs-12 text-white ">
+                        <h1 class="u-Margin0 u-Weight700"><?php echo $breadcrumb_title;?></h1>
+                    </div>
+
+                    <div class="col-md-4 col-xs-12">
+                        <ol class="breadcrumb text-white u-MarginTop10 u-MarginBottom0 pull-right">
+                            <li><a href="#"><?php echo $breadcrumb_title_home;?></a></li>
+                            <li class="active"><span><?php echo $breadcrumb_title;?></span></li>
+                        </ol>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+	<!-- breadcrumb area markup end -->
+
+
+
+
+	<div class="container u-MarginTop100 u-xs-MarginTop30">
+        <div class="row">
+		<main id="main" class="site-main <?php echo esc_attr( corporis_blog_class($col='main') )?>">
 
 		<?php
 		if ( have_posts() ) :
@@ -49,8 +107,10 @@ get_header(); ?>
 		endif; ?>
 
 		</main><!-- #main -->
+	<?php	get_sidebar(); ?>
 	</div><!-- #primary -->
+</div><!-- container end -->
 
 <?php
-get_sidebar();
+
 get_footer();

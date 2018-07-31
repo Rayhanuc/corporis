@@ -10,7 +10,7 @@ function theme_setting_options( $options ) {
   $options[]    = array(
     'name'      => 'header-section',
     'title'     => 'Header',
-    'icon'      => 'fa fa-heart',
+    'icon'      => 'fa fa-star',
     'fields'    => array(
       array(
         'id'    => 'title',
@@ -42,6 +42,49 @@ function theme_setting_options( $options ) {
       ),
     )
   );
+
+//breadcrumb area framework
+$options[]    = array(
+    'name'      => 'blog-section',
+    'title'     => 'Blog hero area',
+    'icon'      => 'fa fa-address-card',
+    'fields'    => array(
+      array(
+        'id'    => 'breadcrumb_img',
+        'type'  => 'image',
+        'title' => 'Breadcrumb area content image',
+        'desc'   => 'Image upload now',
+      ),
+      array(
+        'id'    => 'breadcrumb_title',
+        'type'  => 'text',
+        'title' => 'Page title',
+        'desc'   => 'Your page title write here',
+      ),
+      array(
+        'id'    => 'breadcrumb_title_home',
+        'type'  => 'text',
+        'title' => 'Home Page title',
+        
+      ),
+
+      array(
+        'id'       => 'blog-column',
+        'type'     => 'select',
+        'title'    => esc_html__( 'Blog Sidebar','corporis' ),
+        'desc'   => 'Blog sidebar selection',
+        'options'  => array(
+          'left'  => esc_html__( 'Left Sidebar', 'corporis' ),
+          'right'  => esc_html__( 'Right Sidebar', 'corporis' ),
+          'center'  => esc_html__( 'Center', 'corporis' ),
+          
+        ),
+      ),
+  ),
+);
+
+
+
   $options[]    = array(
     'name'      => 'footer-section',
     'title'     => 'Footer',
@@ -64,6 +107,14 @@ function theme_setting_options( $options ) {
         'title'   => 'Copyright Bg Color',
         'default' => '#ffbc00',
       ),
+
+
+
+
+
+
+
+
       // Typography without Chosen and Variant
       // array(
       //   'id'        => 'font-family',

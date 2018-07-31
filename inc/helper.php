@@ -38,6 +38,27 @@ function page_title_section(){
     </section>
 <?php endif; }
 
+function corporis_blog_class($col='main'){
+    $layout = cs_get_option('blog-column');
+    $map = array(
+        'main' => 'col-md-8 col-sm-8 u-PaddingLeft100 u-xs-PaddingLeft20',
+        'sidebar' => 'col-md-4 col-sm-4',
+    );
+
+    switch ($layout) {
+        case 'right':
+            $map['main']    = 'col-sm-8 col-sm-push-4 u-PaddingLeft100 u-ux-PaddingLeft20';
+            $map['sidebar'] = 'col-sm-4 col-sm-pull-8';
+            break;
+
+        case 'center':
+            $map['main']    = 'col-md-8 col-md-offset-2';
+            $map['sidebar'] = '';
+    }
+
+    return array_key_exists($col, $map) ? $map[$col] : $map['main'];
+}
+
 
 
 ?>

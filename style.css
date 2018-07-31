@@ -701,6 +701,13 @@ a:hover, a:active {
 	max-width: 100%;
 }
 
+.widget ul {
+    margin: 0;
+}
+
+ul.light-gray-link {
+    margin: 0;
+}
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -859,4 +866,9 @@ object {
     position: absolute;
     right: 0;
     top: 30px;
+}
+
+.border-bottom-link a {
+    margin-bottom: 0;
+    padding-bottom: 0;
 }

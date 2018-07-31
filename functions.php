@@ -42,6 +42,17 @@ if ( ! function_exists( 'corporis_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
+
+		// Enable support for Post Thumbnails Formats on posts and pages.
+		add_theme_support( 'post-formats', array(
+			'video',
+			'gallery',
+			'audio',
+			'quote',
+
+		) );
+
+
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'main' => esc_html__( 'Corporis Primary Menu', 'corporis' ),
@@ -95,24 +106,16 @@ function corporis_content_width() {
 }
 add_action( 'after_setup_theme', 'corporis_content_width', 0 );
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
 
-function corporis_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'corporis' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'corporis' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'corporis_widgets_init' );
+
+
+
+
+
+
+
+
+
 
 
 
@@ -157,8 +160,11 @@ require CORPORIS_INCLUDES_DIR.'script.php';
 require CORPORIS_INCLUDES_DIR.'menu.php';
 require CORPORIS_INCLUDES_DIR.'custom-menu.php';
 require CORPORIS_INCLUDES_DIR.'class.sidebars.php';
+//custom widget
+require CORPORIS_INCLUDES_DIR.'custom-widget.php';
 require CORPORIS_INCLUDES_DIR.'metabox.php';
 require CORPORIS_INCLUDES_DIR.'helper.php';
+require CORPORIS_INCLUDES_DIR.'blog-metabox.php';
 
 
 /**

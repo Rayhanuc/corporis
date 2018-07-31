@@ -8136,7 +8136,7 @@ div[class*='col-'].media-left
     color: #000;
 }
 
-.default-color
+.default-color a
 {
     color: #457aff;
 }
@@ -8237,4 +8237,9 @@ div[class*='col-'].media-left
 
 .textwidget ul {
     margin-left: 0;
+}
+
+.border-bottom-link .u-MarginBottom15 a {
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
